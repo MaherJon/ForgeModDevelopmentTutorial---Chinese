@@ -143,9 +143,9 @@ public class MyCoolMod {
 
     public static final String MODID = "mycoolmod";
 
-    public MyCoolMod() {
+    public MyCoolMod(FMJavaModLoadingContext context) {
         // 拿到"模组事件总线"（可以把它理解为本模组专用的广播收音机）
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = context.getModEventBus();
 
         // 订阅"通用设置"事件：到了这个阶段，就执行我们的 commonSetup 方法
         modEventBus.addListener(this::commonSetup);
